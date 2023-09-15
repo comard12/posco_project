@@ -28,6 +28,16 @@ vector <string> start(vector <string> box, string vowl,int turn) {
 	box.push_back(get());
 	return box;
 }
+bool Check(vector <string> box, string element) {
+	for (string i : box) {
+		if (i == element) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+}
 
 int main() {
 	vector <string> box;
@@ -47,7 +57,7 @@ int main() {
 		last = box.back().back();
 		vowl = get();
 		box.push_back(vowl);
-		if (last == vowl.front()) {
+		if (last == vowl.front()&& Check(box,vowl)) {
 		}
 		else {
 			box.pop_back();
