@@ -2,32 +2,52 @@
 #include <vector>
 #include <ctime>
 #include <algorithm>
-#include <math.h>
+#include <string>
 
 
 using namespace std;
 
-void mk_num(vector <int> &com_num) {
-	int randnum = 0;
-	srand(time(NULL));
-	for (int i = 0; i < 3; i++) {
-		randnum = rand()%10;
-		com_num.push_back(randnum);
-	}
-}
 
 int main() {
-	int comnum[3];
-	int input[3];
-	vector <int> same;
+	int input_int = 0;
+	int cnt = 0;
 	int strike = 0;
 	int ball = 0;
-	cin >> input[0] >> input[1] >> input[2];
+	int count = 0;
+	vector <string> same;
+	srand(time(NULL));
+	int comnum[3][1] = { {rand() % 10},{rand() % 10},{rand() % 10} };
+	for (int* i : comnum) {
+		cout << *i << endl;
+	}
+	while (cnt == 0) {
+		vector <int> input;
+		strike = 0;
+		ball = 0;
+		cout << endl << "입력 : ";
+		for (int i = 0; i < 3; i++) {
+			cin >> input_int;
+			input.push_back(input_int);
+		}
 
-	for (int i : input) {
-		cout << input;
+		for (int i = 0; i < 3; i++) {
+			if (comnum[i][0] == input[i])
+				strike++;
+			for (int j = 0; j < 3; j++) {
+				if (input[j] == comnum[i][0] && comnum[i][0] != input[i])
+					ball++;
+			}
+		}
+		if (strike == 3)
+			cnt = 1;
+		else {
+			cout << endl << "--------" << endl;
+			cout << "strike = " << strike;
+			cout << "  ball = " << ball << endl;
+			cout << "--------" << endl;
+		}
+		count++;
 	}
 
-
-
+	cout << count << "번 만에 맞췄습니다." << endl;
 }
