@@ -27,5 +27,8 @@
     <ClCompile Include="project4_magic_square.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="project5_baseball.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
