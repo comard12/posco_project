@@ -120,8 +120,6 @@ int** magicmk(int** array, int n) {
 		stry++;
 		count++;
 		num_of_square--;
-		Say(array, n);
-		cout << "====" << endl;
 	}
 	return array;
 }
