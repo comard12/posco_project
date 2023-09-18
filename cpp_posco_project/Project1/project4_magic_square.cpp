@@ -18,14 +18,14 @@ int main() {
 
 	cout << "N의 값(홀수) : ";
 	cin >> n;
-	if (!is_it_odd(n)) {
+
 		while (!is_it_odd(n))
 		{
 			cout << "홀수를 입력하세요" << endl;
 			cout << "N의 값(홀수) : ";
 			cin >> n;
 		}
-	}
+
 
 	num_of_square = n * n; // 마방진 크기
 

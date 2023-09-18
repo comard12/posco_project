@@ -34,8 +34,7 @@ int Say(int array[], int current, int input) {
 }
 int com() {
 	srand(time(NULL));
-	int com_num = rand() % 3;
-	while (com_num == 0) { com_num = rand() % 3; }
+	int com_num = rand() % 3+1;
 	return com_num;
 }
 

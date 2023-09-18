@@ -31,16 +31,15 @@ vector <string> start(vector <string> box, string vowl,int turn) {
 bool Check(vector <string> box, string element) {
 	for (string i : box) {
 		if (i == element) {
-			return false;
-		}
-		else {
 			return true;
 		}
 	}
+	return false;
 }
 
 int main() {
 	vector <string> box;
+	vector <string> box_before;
 	string vowl;
 	char last;
 	bool ctn = true;
@@ -55,14 +54,20 @@ int main() {
 	while (old_time- new_time < delay) {
 		old_time = clock();
 		last = box.back().back();
-		vowl = get();
-		box.push_back(vowl);
-		if (last == vowl.front()&& Check(box,vowl)) {
-		}
-		else {
+
+		box_before = box;
+		box.push_back(get());
+
+		if (last != box.back().front()) { // 끝말체크
 			box.pop_back();
-			cout << "다시 입력하세요" << endl;
+			cout << "끝말에 맞게 작성해야 합니다!!" << endl;
 		}
+
+		 if (Check(box_before, box.back())) { // 중복체크
+			box.pop_back();
+			cout << "중복된 단어입니다!!" << endl;
+		}
+
 		History(box);
 	}
 	cout << "제한시간 초과 !! " << endl;
