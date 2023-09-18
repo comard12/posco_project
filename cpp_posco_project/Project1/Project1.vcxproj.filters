@@ -21,7 +21,10 @@
     <ClCompile Include="Word Relay.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="project3.cpp">
+    <ClCompile Include="project3_lotto.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="project4_magic_square.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
