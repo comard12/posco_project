@@ -3,7 +3,7 @@
 #include <ctime>
 using namespace std;
 
-#define delay 30000  //µÙ∑π¿Ã 30√ 
+#define delay 10000  //µÙ∑π¿Ã 30√ 
 void History(vector <string> box) {
 	for (string i : box) {
 		cout << i<<"->";
@@ -54,7 +54,6 @@ int main() {
 	while (old_time- new_time < delay) {
 		old_time = clock();
 		last = box.back().back();
-
 		box_before = box;
 		box.push_back(get());
 

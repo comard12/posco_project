@@ -17,9 +17,19 @@ int main() {
 	vector <string> same;
 	srand(time(NULL));
 	int comnum[3][1] = { {rand() % 10},{rand() % 10},{rand() % 10} };
-	for (int* i : comnum) {
-		cout << *i << endl;
+		while (comnum[0][0] == comnum[1][0] || comnum[1][0] == comnum[2][0] || comnum[2][0] == comnum[0][0]) {
+			for (int* i : comnum) {
+				*i = rand()%10;
+			}
+		for (int* i : comnum) {
+			cout << *i << endl;
+		}
+		cout << "=======" << endl;
 	}
+		for (int* i : comnum) {
+			cout << *i << endl;
+		}
+
 	while (cnt == 0) {
 		vector <int> input;
 		strike = 0;
@@ -28,6 +38,15 @@ int main() {
 		for (int i = 0; i < 3; i++) {
 			cin >> input_int;
 			input.push_back(input_int);
+		}
+
+		while (input[0] == input[1] || input[1] == input[2] || input[2] == input[0]) {
+			cout << endl << "중복입니다.";
+			vector <int> input;
+			for (int i = 0; i < 3; i++) {
+				cin >> input_int;
+				input.push_back(input_int);
+			}
 		}
 
 		for (int i = 0; i < 3; i++) {
@@ -40,6 +59,7 @@ int main() {
 		}
 		if (strike == 3)
 			cnt = 1;
+
 		else {
 			cout << endl << "--------" << endl;
 			cout << "strike = " << strike;

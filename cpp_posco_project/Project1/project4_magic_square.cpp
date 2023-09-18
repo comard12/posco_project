@@ -97,6 +97,7 @@ int** magicmk(int** array, int n) {
 	int strx = (n + 1) / 2 - 1; // x 값
 	int stry = n - 1;           // y 값
 	while (num_of_square > 0) { // 마방진 푸는 법
+	
 		if (stry > n - 1) {
 			stry = 0;
 		}
@@ -105,12 +106,22 @@ int** magicmk(int** array, int n) {
 		}
 		if (array[stry][strx] != 0) {
 			stry--;
+			stry--;
+			strx--;
+		}
+		if (strx < 0) {
+			strx = n - 1;
+		}
+		if (stry < 0) {
+			stry = n - 2;
 		}
 		array[stry][strx] = count;
 		strx++;
 		stry++;
 		count++;
 		num_of_square--;
+		Say(array, n);
+		cout << "====" << endl;
 	}
 	return array;
 }
