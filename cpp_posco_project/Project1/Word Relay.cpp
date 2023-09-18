@@ -63,7 +63,7 @@ int main() {
 			cout << "끝말에 맞게 작성해야 합니다!!" << endl;
 		}
 
-		 if (Check(box_before, box.back())) { // 중복체크
+		else if (Check(box_before, box.back())) { // 중복체크
 			box.pop_back();
 			cout << "중복된 단어입니다!!" << endl;
 		}
