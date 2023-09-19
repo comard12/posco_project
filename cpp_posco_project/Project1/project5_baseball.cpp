@@ -21,33 +21,22 @@ int main() {
 			for (int* i : comnum) {
 				*i = rand()%10;
 			}
-		for (int* i : comnum) {
-			cout << *i << endl;
-		}
-		cout << "=======" << endl;
 	}
-		for (int* i : comnum) {
-			cout << *i << endl;
-		}
+		cout << "야구게임" << endl;
 
 	while (cnt == 0) {
 		vector <int> input;
 		strike = 0;
 		ball = 0;
-		cout << endl << "입력 : ";
+		cout << "1~9 사이의 숫자 3개를 입력 하시오 ( 종료 : 이외의 숫자 ) : ";
 		for (int i = 0; i < 3; i++) {
 			cin >> input_int;
 			input.push_back(input_int);
-		}
-
-		while (input[0] == input[1] || input[1] == input[2] || input[2] == input[0]) {
-			cout << endl << "중복입니다.";
-			vector <int> input;
-			for (int i = 0; i < 3; i++) {
-				cin >> input_int;
-				input.push_back(input_int);
+			if (input_int > 9 || input_int <= 0) {
+				cnt = 1;
 			}
 		}
+
 
 		for (int i = 0; i < 3; i++) {
 			if (comnum[i][0] == input[i])
@@ -58,16 +47,18 @@ int main() {
 			}
 		}
 		if (strike == 3)
-			cnt = 1;
+			cnt = 2;
 
-		else {
-			cout << endl << "--------" << endl;
+		else if (cnt != 1){
 			cout << "strike = " << strike;
-			cout << "  ball = " << ball << endl;
-			cout << "--------" << endl;
+			cout << "   ball = " << ball << endl;
 		}
 		count++;
 	}
-
-	cout << count << "번 만에 맞췄습니다." << endl;
+	if (cnt == 2) {
+		cout << count << "번 만에 맞췄습니다." << endl;
+	}
+	else {
+		cout << "게임 종료" << endl;
+	}
 }
